@@ -1,9 +1,6 @@
 import os
 import time
 
-import os, json
-from datetime import datetime
-
 AION_UI_VERSION = time.strftime('%Y%m%d') + '_V01'
 
 import re
@@ -222,139 +219,6 @@ def kanban_subset(df, status_name):
     return df2[show_cols].to_dict("records")
 
 # ---------- App ----------
-DATA_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data"))
-OVERVIEW_PATH = os.path.join(DATA_DIR, "overview.json")
-
-DEFAULT_OVERVIEW = {
-    "Project Name": "Project Aion",
-    "Vision": "",
-    "Objective": "",
-    "Timeline": "2026-12-31",
-    "Owner": "Shane Clarke",
-    "Notes": ""
-}
-
-def load_overview():
-    os.makedirs(DATA_DIR, exist_ok=True)
-    if not os.path.exists(OVERVIEW_PATH):
-        save_overview(DEFAULT_OVERVIEW)
-        return DEFAULT_OVERVIEW.copy()
-    try:
-        with open(OVERVIEW_PATH, "r", encoding="utf-8") as f:
-            data = json.load(f)
-        merged = DEFAULT_OVERVIEW.copy()
-        merged.update({k: v for k, v in (data or {}).items() if not str(k).startswith("_")})
-        merged["_last_saved"] = (data or {}).get("_last_saved", "")
-        return merged
-    except Exception:
-        return DEFAULT_OVERVIEW.copy()
-
-def save_overview(d: dict):
-    os.makedirs(DATA_DIR, exist_ok=True)
-    payload = dict(d)
-    payload["_last_saved"] = datetime.utcnow().isoformat(timespec="seconds") + "Z"
-    with open(OVERVIEW_PATH, "w", encoding="utf-8") as f:
-        json.dump(payload, f, indent=2, ensure_ascii=False)
-
-def overview_to_rows(d: dict):
-    keys = [k for k in d.keys() if not str(k).startswith("_") and k != "Notes"]
-    keys = keys + (["Notes"] if "Notes" in d else [])
-    return [{"Field": k, "Value": d.get(k, "")} for k in keys]
-
-def rows_to_overview(rows):
-    out = {}
-    for r in rows or []:
-        k = (r.get("Field") or "").strip()
-        if k:
-            out[k] = r.get("Value", "")
-    return out
-
-def render_overview_tab():
-    d = load_overview()
-    rows = overview_to_rows(d)
-    last_saved = d.get("_last_saved", "")
-
-    return html.Div(
-        style={"maxWidth": "1000px"},
-        children=[
-            html.H3("Overview"),
-            dcc.Store(id="store-overview", data=rows),
-            html.Div(
-                style={"display": "flex", "gap": "10px", "alignItems": "center", "marginBottom": "8px"},
-                children=[
-                    html.Button("Save Overview", id="btn-save-overview", n_clicks=0),
-                    html.Span(id="lbl-overview-status", children=(f"Last saved: {last_saved}" if last_saved else "")),
-                ],
-            ),
-            DataTable(
-                id="tbl-overview",
-                data=rows,
-                columns=[
-                    {"name": "Field", "id": "Field", "editable": False},
-                    {"name": "Value", "id": "Value", "editable": True},
-                ],
-                editable=True,
-                row_deletable=False,
-                css=[
-                    {"selector":"input", "rule":"text-align: center;"},
-                    {"selector":"textarea", "rule":"text-align: center;"},
-                ],
-                page_size=25,
-                style_table={"overflowX":"auto", "width":"100%"},
-                style_header={"fontWeight":"700","fontFamily":"Arial","textAlign":"center"},
-                style_cell={
-                    "padding":"10px",
-                    "whiteSpace":"normal",
-                    "height":"auto",
-                    "lineHeight":"1.35",
-                    "fontFamily":"Arial",
-                    "fontSize":"14px",
-                    "textAlign":"center",
-                    "verticalAlign":"top",
-                },
-                style_cell_conditional=[
-                    {"if":{"column_id":"Field"}, "textAlign":"center", "fontWeight":"700", "width":"28%", "minWidth":"220px", "whiteSpace":"nowrap"},
-                    {"if":{"column_id":"Value"}, "textAlign":"center", "width":"72%"},
-                ],
-                style_data_conditional=[
-                    {"if":{"row_index":"odd"}, "backgroundColor":"#fafafa"},
-                    {"if":{"column_id":"Field"}, "fontWeight":"700"},
-                ],
-            ),
-
-            html.Hr(),
-            html.H4("Project Charter (existing data)"),
-            DataTable(
-                id="tbl-charter",
-                data=(charter_tbl.to_dict("records") if "charter_tbl" in globals() else []),
-                columns=[{"name":"Field","id":"Field","editable":False},{"name":"Value","id":"Value","editable":True}],
-                editable=True,
-                page_size=25,
-                style_table={"overflowX":"auto", "width":"100%"},
-                style_header={"fontWeight":"700","fontFamily":"Arial","textAlign":"center"},
-                style_cell={
-                    "padding":"10px",
-                    "whiteSpace":"normal",
-                    "height":"auto",
-                    "lineHeight":"1.35",
-                    "fontFamily":"Arial",
-                    "fontSize":"14px",
-                    "textAlign":"center",
-                    "verticalAlign":"top",
-                },
-                style_cell_conditional=[
-                    {"if":{"column_id":"Field"}, "width":"28%", "minWidth":"220px", "whiteSpace":"nowrap", "textAlign":"center", "fontWeight":"700"},
-                    {"if":{"column_id":"Value"}, "width":"72%", "textAlign":"center"},
-                ],
-                style_data_conditional=[
-                    {"if":{"row_index":"odd"}, "backgroundColor":"#fafafa"},
-                    {"if":{"column_id":"Field"}, "fontWeight":"700"},
-                ],
-            ),
-        ],
-    )
-
-
 app = Dash(__name__, prevent_initial_callbacks="initial_duplicate")
 app.title = "Project Aion - PM System"
 
@@ -424,7 +288,23 @@ app.layout = html.Div(
         dcc.Interval(id="autosave", interval=60_000, n_intervals=0),
 
         dcc.Tabs([
-            dcc.Tab(label="Overview", children=render_overview_tab()),
+            dcc.Tab(label="Overview", children=[
+                DataTable(
+                    data=charter_tbl.to_dict("records"),
+                    columns=[{"name":"Field","id":"Field"},{"name":"Value","id":"Value"}],
+                    page_size=25,
+                    style_table={"overflowX":"auto"},
+                    style_cell=DT_STYLE_CELL,
+                                    style_header={"fontWeight":"700","fontFamily":"Arial","textAlign":"center"},
+                    style_cell_conditional=[
+                        {"if":{"column_id":"Field"}, "width":"21%", "minWidth":"220px", "whiteSpace":"nowrap", "textAlign":"center"},
+                        {"if":{"column_id":"Value"}, "width":"79%", "textAlign":"center"},
+                    ],
+                    style_data_conditional=[
+                        {"if":{"column_id":"Field"}, "fontWeight":"700"},
+                    ],
+                    )
+            ]),
 
             dcc.Tab(label="Tickets", children=[
                 html.Div(id="tickets_kpis"),
@@ -862,26 +742,3 @@ def autosave(_, t_rows, d_rows, t_saved, d_saved):
 
 if __name__ == "__main__":
     app.run(debug=True, port=8050)
-
-
-
-@app.callback(
-    Output("store-overview", "data"),
-    Input("tbl-overview", "data"),
-    prevent_initial_call=True,
-)
-def _sync_overview_store(table_rows):
-    return table_rows
-
-
-@app.callback(
-    Output("lbl-overview-status", "children"),
-    Input("btn-save-overview", "n_clicks"),
-    State("store-overview", "data"),
-    prevent_initial_call=True,
-)
-def _save_overview(n_clicks, rows):
-    d = rows_to_overview(rows)
-    save_overview(d)
-    saved = load_overview().get("_last_saved", "")
-    return f"Saved: {saved}"

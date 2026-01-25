@@ -1,0 +1,11 @@
+/* Center text inside editable DataTable cells (inputs/textareas) */
+#tbl-overview input, #tbl-overview textarea,
+#tbl-charter input, #tbl-charter textarea {
+  text-align: center !important;
+}
+
+/* Also center non-editing cell text for the Value column */
+#tbl-overview .dash-cell.column-Value,
+#tbl-charter .dash-cell.column-Value {
+  text-align: center !important;
+}

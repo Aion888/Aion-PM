@@ -295,10 +295,6 @@ def render_overview_tab():
                 ],
                 editable=True,
                 row_deletable=False,
-                css=[
-                    {"selector":"input", "rule":"text-align: center;"},
-                    {"selector":"textarea", "rule":"text-align: center;"},
-                ],
                 page_size=25,
                 style_table={"overflowX":"auto", "width":"100%"},
                 style_header={"fontWeight":"700","fontFamily":"Arial","textAlign":"center"},
@@ -327,8 +323,7 @@ def render_overview_tab():
             DataTable(
                 id="tbl-charter",
                 data=(charter_tbl.to_dict("records") if "charter_tbl" in globals() else []),
-                columns=[{"name":"Field","id":"Field","editable":False},{"name":"Value","id":"Value","editable":True}],
-                editable=True,
+                columns=[{"name":"Field","id":"Field"},{"name":"Value","id":"Value"}],
                 page_size=25,
                 style_table={"overflowX":"auto", "width":"100%"},
                 style_header={"fontWeight":"700","fontFamily":"Arial","textAlign":"center"},

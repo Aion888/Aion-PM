@@ -295,10 +295,6 @@ def render_overview_tab():
                 ],
                 editable=True,
                 row_deletable=False,
-                css=[
-                    {"selector":"input", "rule":"text-align: center;"},
-                    {"selector":"textarea", "rule":"text-align: center;"},
-                ],
                 page_size=25,
                 style_table={"overflowX":"auto", "width":"100%"},
                 style_header={"fontWeight":"700","fontFamily":"Arial","textAlign":"center"},
@@ -309,12 +305,12 @@ def render_overview_tab():
                     "lineHeight":"1.35",
                     "fontFamily":"Arial",
                     "fontSize":"14px",
-                    "textAlign":"center",
+                    "textAlign":"left",
                     "verticalAlign":"top",
                 },
                 style_cell_conditional=[
                     {"if":{"column_id":"Field"}, "textAlign":"center", "fontWeight":"700", "width":"28%", "minWidth":"220px", "whiteSpace":"nowrap"},
-                    {"if":{"column_id":"Value"}, "textAlign":"center", "width":"72%"},
+                    {"if":{"column_id":"Value"}, "textAlign":"left", "width":"72%"},
                 ],
                 style_data_conditional=[
                     {"if":{"row_index":"odd"}, "backgroundColor":"#fafafa"},
@@ -327,8 +323,7 @@ def render_overview_tab():
             DataTable(
                 id="tbl-charter",
                 data=(charter_tbl.to_dict("records") if "charter_tbl" in globals() else []),
-                columns=[{"name":"Field","id":"Field","editable":False},{"name":"Value","id":"Value","editable":True}],
-                editable=True,
+                columns=[{"name":"Field","id":"Field"},{"name":"Value","id":"Value"}],
                 page_size=25,
                 style_table={"overflowX":"auto", "width":"100%"},
                 style_header={"fontWeight":"700","fontFamily":"Arial","textAlign":"center"},
@@ -339,12 +334,12 @@ def render_overview_tab():
                     "lineHeight":"1.35",
                     "fontFamily":"Arial",
                     "fontSize":"14px",
-                    "textAlign":"center",
+                    "textAlign":"left",
                     "verticalAlign":"top",
                 },
                 style_cell_conditional=[
                     {"if":{"column_id":"Field"}, "width":"28%", "minWidth":"220px", "whiteSpace":"nowrap", "textAlign":"center", "fontWeight":"700"},
-                    {"if":{"column_id":"Value"}, "width":"72%", "textAlign":"center"},
+                    {"if":{"column_id":"Value"}, "width":"72%", "textAlign":"left"},
                 ],
                 style_data_conditional=[
                     {"if":{"row_index":"odd"}, "backgroundColor":"#fafafa"},
