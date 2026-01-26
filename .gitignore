@@ -22,3 +22,22 @@ _archive_old/
 # Data artifacts (keep out of git unless you explicitly want them tracked)
 *.xlsx
 *.csv
+
+# --- local/env ---
+aion_env/
+.venv/
+__pycache__/
+*.pyc
+
+# --- logs ---
+logs/
+*.log
+
+# --- editor / scratch files ---
+*app.pynano*
+.DS_Store
+
+# --- backups ---
+*.bak_*
+*.save
+
