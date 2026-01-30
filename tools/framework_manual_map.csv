@@ -1,27 +1,27 @@
 scope,sheet,row,id,title,info,current_framework_node,suggested,confidence,top3,framework_node_final
-roadmap,02_Roadmap,2,,,,,32_Trading_Strategies_Early_Mid_Late_Market,0.104,"32_Trading_Strategies_Early_Mid_Late_Market (0.10), 37_Trading_Strategies_cA_Continuous_Alpha (0.10), 41_Trading_Strategies_Staking_Kelly (0.09)",32_Trading_Strategies_Early_Mid_Late_Market
+roadmap,02_Roadmap,2,,,,32_Trading_Strategies_Early_Mid_Late_Market,32_Trading_Strategies_Early_Mid_Late_Market,0.104,"32_Trading_Strategies_Early_Mid_Late_Market (0.10), 37_Trading_Strategies_cA_Continuous_Alpha (0.10), 41_Trading_Strategies_Staking_Kelly (0.09)",32_Trading_Strategies_Early_Mid_Late_Market
 roadmap,02_Roadmap,3,,,,,,0.0,,
-roadmap,02_Roadmap,4,,,,,24_Features_Public_Live_Market,0.106,"24_Features_Public_Live_Market (0.11), 05_Glass_Cockpit_GUI (0.10), 02_Technology_Advantage (0.09)",24_Features_Public_Live_Market
-roadmap,02_Roadmap,5,,,,,07_Databases,0.05,"07_Databases (0.05), 13_IT_Infrastructure (0.04), 09_Expert_Systems (0.04)",07_Databases
-roadmap,02_Roadmap,6,,,,,07_Databases,0.05,"07_Databases (0.05), 13_IT_Infrastructure (0.04), 09_Expert_Systems (0.04)",07_Databases
-roadmap,02_Roadmap,7,,,,,07_Databases,0.05,"07_Databases (0.05), 13_IT_Infrastructure (0.04), 09_Expert_Systems (0.04)",07_Databases
-roadmap,02_Roadmap,8,,,,,07_Databases,0.05,"07_Databases (0.05), 13_IT_Infrastructure (0.04), 09_Expert_Systems (0.04)",07_Databases
-roadmap,02_Roadmap,9,,,,,07_Databases,0.05,"07_Databases (0.05), 13_IT_Infrastructure (0.04), 09_Expert_Systems (0.04)",07_Databases
-roadmap,02_Roadmap,10,,,,,07_Databases,0.05,"07_Databases (0.05), 13_IT_Infrastructure (0.04), 09_Expert_Systems (0.04)",07_Databases
-roadmap,02_Roadmap,11,,,,,07_Databases,0.05,"07_Databases (0.05), 13_IT_Infrastructure (0.04), 09_Expert_Systems (0.04)",07_Databases
-roadmap,02_Roadmap,12,,,,,07_Databases,0.05,"07_Databases (0.05), 13_IT_Infrastructure (0.04), 09_Expert_Systems (0.04)",07_Databases
-roadmap,02_Roadmap,13,,,,,07_Databases,0.05,"07_Databases (0.05), 13_IT_Infrastructure (0.04), 09_Expert_Systems (0.04)",07_Databases
-roadmap,02_Roadmap,14,,,,,07_Databases,0.05,"07_Databases (0.05), 13_IT_Infrastructure (0.04), 09_Expert_Systems (0.04)",07_Databases
-roadmap,02_Roadmap,15,,,,,07_Databases,0.05,"07_Databases (0.05), 13_IT_Infrastructure (0.04), 09_Expert_Systems (0.04)",07_Databases
-roadmap,02_Roadmap,16,,,,,07_Databases,0.05,"07_Databases (0.05), 13_IT_Infrastructure (0.04), 09_Expert_Systems (0.04)",07_Databases
-tickets,04_Tickets,2,,,,,10_Pulse_Race_Status_Bet_Triggers,0.099,"10_Pulse_Race_Status_Bet_Triggers (0.10), 40_Business_Intelligence_Reconciliation (0.09), 39_Business_Intelligence_Reporting (0.09)",10_Pulse_Race_Status_Bet_Triggers
+roadmap,02_Roadmap,4,,,,24_Features_Public_Live_Market,24_Features_Public_Live_Market,0.106,"24_Features_Public_Live_Market (0.11), 05_Glass_Cockpit_GUI (0.10), 02_Technology_Advantage (0.09)",24_Features_Public_Live_Market
+roadmap,02_Roadmap,5,,,,07_Databases,07_Databases,0.05,"07_Databases (0.05), 13_IT_Infrastructure (0.04), 09_Expert_Systems (0.04)",07_Databases
+roadmap,02_Roadmap,6,,,,07_Databases,07_Databases,0.05,"07_Databases (0.05), 13_IT_Infrastructure (0.04), 09_Expert_Systems (0.04)",07_Databases
+roadmap,02_Roadmap,7,,,,07_Databases,07_Databases,0.05,"07_Databases (0.05), 13_IT_Infrastructure (0.04), 09_Expert_Systems (0.04)",07_Databases
+roadmap,02_Roadmap,8,,,,07_Databases,07_Databases,0.05,"07_Databases (0.05), 13_IT_Infrastructure (0.04), 09_Expert_Systems (0.04)",07_Databases
+roadmap,02_Roadmap,9,,,,07_Databases,07_Databases,0.05,"07_Databases (0.05), 13_IT_Infrastructure (0.04), 09_Expert_Systems (0.04)",07_Databases
+roadmap,02_Roadmap,10,,,,07_Databases,07_Databases,0.05,"07_Databases (0.05), 13_IT_Infrastructure (0.04), 09_Expert_Systems (0.04)",07_Databases
+roadmap,02_Roadmap,11,,,,07_Databases,07_Databases,0.05,"07_Databases (0.05), 13_IT_Infrastructure (0.04), 09_Expert_Systems (0.04)",07_Databases
+roadmap,02_Roadmap,12,,,,07_Databases,07_Databases,0.05,"07_Databases (0.05), 13_IT_Infrastructure (0.04), 09_Expert_Systems (0.04)",07_Databases
+roadmap,02_Roadmap,13,,,,07_Databases,07_Databases,0.05,"07_Databases (0.05), 13_IT_Infrastructure (0.04), 09_Expert_Systems (0.04)",07_Databases
+roadmap,02_Roadmap,14,,,,07_Databases,07_Databases,0.05,"07_Databases (0.05), 13_IT_Infrastructure (0.04), 09_Expert_Systems (0.04)",07_Databases
+roadmap,02_Roadmap,15,,,,07_Databases,07_Databases,0.05,"07_Databases (0.05), 13_IT_Infrastructure (0.04), 09_Expert_Systems (0.04)",07_Databases
+roadmap,02_Roadmap,16,,,,07_Databases,07_Databases,0.05,"07_Databases (0.05), 13_IT_Infrastructure (0.04), 09_Expert_Systems (0.04)",07_Databases
+tickets,04_Tickets,2,,,,10_Pulse_Race_Status_Bet_Triggers,10_Pulse_Race_Status_Bet_Triggers,0.099,"10_Pulse_Race_Status_Bet_Triggers (0.10), 40_Business_Intelligence_Reconciliation (0.09), 39_Business_Intelligence_Reporting (0.09)",10_Pulse_Race_Status_Bet_Triggers
 tickets,04_Tickets,3,,,,,,0.0,,
-tickets,04_Tickets,4,,,,,05_Glass_Cockpit_GUI,0.115,"05_Glass_Cockpit_GUI (0.12), 24_Features_Public_Live_Market (0.10), 11_GUI_Pulse_Input (0.10)",05_Glass_Cockpit_GUI
-tickets,04_Tickets,5,,,,,14_ML_XGBOOST,0.046,"14_ML_XGBOOST (0.05), 07_Databases (0.04), 13_IT_Infrastructure (0.03)",14_ML_XGBOOST
-tickets,04_Tickets,6,,,,,14_ML_XGBOOST,0.046,"14_ML_XGBOOST (0.05), 07_Databases (0.04), 13_IT_Infrastructure (0.03)",14_ML_XGBOOST
-tickets,04_Tickets,7,,,,,14_ML_XGBOOST,0.046,"14_ML_XGBOOST (0.05), 07_Databases (0.04), 13_IT_Infrastructure (0.03)",14_ML_XGBOOST
-tickets,04_Tickets,8,,,,,14_ML_XGBOOST,0.046,"14_ML_XGBOOST (0.05), 07_Databases (0.04), 13_IT_Infrastructure (0.03)",14_ML_XGBOOST
-tickets,04_Tickets,9,,,,,14_ML_XGBOOST,0.046,"14_ML_XGBOOST (0.05), 07_Databases (0.04), 13_IT_Infrastructure (0.03)",14_ML_XGBOOST
+tickets,04_Tickets,4,,,,05_Glass_Cockpit_GUI,05_Glass_Cockpit_GUI,0.115,"05_Glass_Cockpit_GUI (0.12), 24_Features_Public_Live_Market (0.10), 11_GUI_Pulse_Input (0.10)",05_Glass_Cockpit_GUI
+tickets,04_Tickets,5,,,,14_ML_XGBOOST,14_ML_XGBOOST,0.046,"14_ML_XGBOOST (0.05), 07_Databases (0.04), 13_IT_Infrastructure (0.03)",14_ML_XGBOOST
+tickets,04_Tickets,6,,,,14_ML_XGBOOST,14_ML_XGBOOST,0.046,"14_ML_XGBOOST (0.05), 07_Databases (0.04), 13_IT_Infrastructure (0.03)",14_ML_XGBOOST
+tickets,04_Tickets,7,,,,14_ML_XGBOOST,14_ML_XGBOOST,0.046,"14_ML_XGBOOST (0.05), 07_Databases (0.04), 13_IT_Infrastructure (0.03)",14_ML_XGBOOST
+tickets,04_Tickets,8,,,,14_ML_XGBOOST,14_ML_XGBOOST,0.046,"14_ML_XGBOOST (0.05), 07_Databases (0.04), 13_IT_Infrastructure (0.03)",14_ML_XGBOOST
+tickets,04_Tickets,9,,,,14_ML_XGBOOST,14_ML_XGBOOST,0.046,"14_ML_XGBOOST (0.05), 07_Databases (0.04), 13_IT_Infrastructure (0.03)",14_ML_XGBOOST
 tickets,04_Tickets,10,,,,,,0.0,,
 tickets,04_Tickets,11,,,,,,0.0,,
 tickets,04_Tickets,12,,,,,,0.0,,
