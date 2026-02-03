@@ -40,3 +40,9 @@ data/project_index.json
 
 # Generated reports
 /data/pm_drift_report.csv
+
+# Python env
+.venv/
+__pycache__/
+*.pyc
+.env
